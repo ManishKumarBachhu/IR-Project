@@ -63,7 +63,7 @@ def lyrics_to_bow(lyrics):
         lyrics_flat = lyrics_flat.replace(p, '')
     words = filter(lambda x: x.strip() != '', lyrics_flat.split(' '))
     
-    print(lyrics_flat)
+    #print(lyrics_flat)
     # stem words
     words = map(lambda x: stem(x), words)
     
@@ -81,14 +81,12 @@ def lyrics_to_bow(lyrics):
     return bow
 
 def input_to_bow(lyrics):
-    if __name__ == '__main__':
+    #if __name__ == '__main__':
+    lyrics = lyrics.strip()
     
-        #lyrics = input("Enter lyrics: ")
-        for word in sys.argv[2:]:
-            lyrics += ' ' + word
-        lyrics = lyrics.strip()
-    
-        # make bag of words
-        bow = lyrics_to_bow(lyrics)
-        print(bow)
+    # make bag of words
+    bow = lyrics_to_bow(lyrics)
+    return bow
+
+#print(input_to_bow("hello!! How are you doing?"))
     
